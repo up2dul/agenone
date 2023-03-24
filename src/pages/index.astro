@@ -1,11 +1,13 @@
 ---
-import Layout from '~/layouts/Layout.astro';
+import BaseLayout from '~/components/layout/BaseLayout.astro';
+import Header from '~/components/layout/Header.astro';
 
 import '~/styles/base.css';
 ---
 
-<Layout>
+<BaseLayout>
+	<Header />
 	<main>
 		<h1 class="text-5xl">Hello astro</h1>
 	</main>
-</Layout>
+</BaseLayout>
