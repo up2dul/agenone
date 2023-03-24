@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  html, body {
+  html {
+		@apply scroll-smooth;
+	}
+
+	body {
 		font-family: "Inter", sans-serif;
 	}
 }
