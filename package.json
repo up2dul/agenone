@@ -2,6 +2,7 @@
   "name": "agenone",
   "type": "module",
   "version": "0.0.1",
+  "author": "Abdul malik <up2dul@gmail.com>",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,6 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.1.6"
+    "@astrojs/tailwind": "^3.1.1",
+    "@fontsource/inter": "^4.5.15",
+    "astro": "^2.1.6",
+    "tailwindcss": "^3.0.24"
   }
 }
