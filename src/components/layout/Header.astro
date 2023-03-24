@@ -1,0 +1,36 @@
+---
+import Button from '~/components/common/Button.astro';
+import { navList } from '~/lib/misc';
+import { cn } from '~/lib/utils';
+---
+
+<header
+  class={cn(
+    'fixed top-0 inset-x-0',
+    'flex h-[94px] items-center justify-between px-20',
+    'text-gray-50',
+  )}
+>
+  <img
+    src="/assets/agenone-nav.png"
+    alt="Agenone logo"
+    width="170px"
+    height="34px"
+  />
+
+  <nav>
+    <ul class="flex gap-10 text-lg font-medium">
+      {
+        navList.map(({ title, href }) => (
+          <li>
+            <a href={href} class="transition-colors hover:text-gray-200">
+              {title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <Button title="Contact us">Contact Us</Button>
+</header>
