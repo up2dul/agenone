@@ -5,17 +5,17 @@ module.exports = {
     browser: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:astro/recommended",
-    "plugin:jsx-a11y/recommended"
+    'eslint:recommended',
+    'plugin:astro/recommended',
+    'plugin:jsx-a11y/recommended',
   ],
   overrides: [
     {
-      files: ["*.astro"],
-      parser: "astro-eslint-parser",
+      files: ['*.astro'],
+      parser: 'astro-eslint-parser',
       parserOptions: {
-        parser: "@typescript-eslint/parser",
-        extraFileExtensions: [".astro"],
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
       },
       rules: {
         // override/add rules settings here, such as:
@@ -35,4 +35,4 @@ module.exports = {
       },
     },
   ],
-}
+};
