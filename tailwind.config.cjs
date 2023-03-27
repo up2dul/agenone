@@ -3,6 +3,20 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {},
+    fontSize: {
+      'xs': '12px',
+      'sm': '14px',
+      'md': '16px',
+      'lg': '18px',
+      'xl': '20px',
+      '2xl': '24px',
+      '3xl': '28px',
+      '4xl': '32px',
+      '5xl': '36px',
+      '6xl': '44px',
+      'd-sm': '48px',
+      'd-lg': '72px',
+    },
     colors: {
       transparent: 'transparent',
       white: '#FFF',

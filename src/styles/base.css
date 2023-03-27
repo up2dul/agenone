@@ -10,4 +10,14 @@
 	body {
 		font-family: "Inter", sans-serif;
 	}
+
+	h1,
+	h2,
+	h3 {
+		@apply leading-tight;
+	}
+
+	section {
+		@apply px-6 sm:px-8 md:px-10 lg:px-20;
+	}
 }
