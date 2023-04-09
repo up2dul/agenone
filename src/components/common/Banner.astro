@@ -1,0 +1,34 @@
+---
+import { bannerItems } from '~/lib/misc';
+
+import BannerItem from './BannerItem.astro';
+---
+
+<div
+  class="banner mt-20 relative rounded-2xl px-[30px] md:px-[60px] pt-4 md:pt-6 pb-14 bg-gradient-to-br from-shamrock-400 to-pine-300"
+>
+  <img
+    class="absolute top-0 left-0"
+    src="/assets/ornament-banner-1.svg"
+    alt="ornament"
+  />
+  <img
+    class="hidden md:block absolute bottom-0 right-0"
+    src="/assets/ornament-banner-2.svg"
+    alt="ornament"
+  />
+
+  <h1 class="text-lg md:text-4xl font-semibold">
+    Benefit of improving your business
+  </h1>
+
+  <ul class="flex justify-between mt-[43px] z-10 relative overflow-hidden">
+    {
+      bannerItems.map((banner) => (
+        <li>
+          <BannerItem title={banner.title} img={banner.img} />
+        </li>
+      ))
+    }
+  </ul>
+</div>
