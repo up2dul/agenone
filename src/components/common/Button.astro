@@ -1,22 +1,27 @@
 ---
 import type { ClassValue } from 'clsx';
+
 import { cn } from '~/lib/utils';
 
 export interface Props {
   title?: string;
+  isSmall?: boolean;
   classList?: ClassValue;
 }
 
-const { title = 'button', classList } = Astro.props;
+const { title = 'button', isSmall, classList } = Astro.props;
 ---
 
 <button
+  type="button"
   aria-label={title}
   title={title}
   class={cn(
-    'rounded-full py-5 px-8 font-medium',
+    'flex justify-between items-center gap-2',
+    'rounded-full font-medium',
     'bg-gradient-to-br from-shamrock-400 to-pine-400',
     'transition-opacity hover:opacity-90',
+    isSmall ? 'py-4 px-6' : 'py-5 px-8',
     classList,
   )}
 >
