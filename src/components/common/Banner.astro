@@ -1,11 +1,16 @@
 ---
 import { bannerItems } from '~/lib/misc';
+import { cn } from '~/lib/utils';
 
 import BannerItem from './BannerItem.astro';
 ---
 
 <div
-  class="banner mt-20 relative rounded-2xl px-[30px] md:px-[60px] pt-4 md:pt-6 pb-14 bg-gradient-to-br from-shamrock-400 to-pine-300"
+  class={cn(
+    'mt-20 relative rounded-2xl overflow-hidden',
+    'px-[30px] md:px-[60px] pt-4 md:pt-6 pb-14',
+    'bg-gradient-to-br from-shamrock-400 to-pine-300',
+  )}
 >
   <img
     class="absolute top-0 left-0"
@@ -13,22 +18,44 @@ import BannerItem from './BannerItem.astro';
     alt="ornament"
   />
   <img
-    class="hidden md:block absolute bottom-0 right-0"
+    class="absolute bottom-0 right-0 hidden md:block"
     src="/assets/ornament-banner-2.svg"
     alt="ornament"
   />
 
-  <h1 class="text-lg md:text-4xl font-semibold">
+  <h1 class="text-lg font-semibold md:text-4xl">
     Benefit of improving your business
   </h1>
 
-  <ul class="flex justify-between mt-[43px] z-10 relative overflow-hidden">
-    {
-      bannerItems.map((banner) => (
-        <li>
-          <BannerItem title={banner.title} img={banner.img} />
-        </li>
-      ))
-    }
-  </ul>
+  <div class="splide mt-[39px] md:mt-[43px]">
+    <div class="splide__track">
+      <ul class="splide__list flex justify-between">
+        {
+          bannerItems.map((banner) => (
+            <li class="splide__slide">
+              <BannerItem title={banner.title} img={banner.img} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
 </div>
+
+<script>
+  import Splide from '@splidejs/splide';
+  import '@splidejs/splide/css';
+
+  new Splide('.splide', {
+    perPage: 4,
+    arrows: false,
+    pagination: false,
+    drag: false,
+    breakpoints: {
+      900: {
+        perPage: 1,
+        arrows: true,
+      },
+    },
+  }).mount();
+</script>
