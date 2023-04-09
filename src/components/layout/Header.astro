@@ -1,24 +1,24 @@
 ---
-import Button from '~/components/common/Button.astro';
-import { navList } from '~/lib/misc';
 import { cn } from '~/lib/utils';
+import { navList } from '~/lib/misc';
+
+import Button from '~/components/common/Button.astro';
 ---
 
 <header
   class={cn(
-    'fixed top-0 inset-x-0',
-    'flex h-[94px] items-center justify-between px-20',
-    'text-gray-50',
+    'fixed top-0 inset-x-0 z-10',
+    'flex h-[94px] items-center justify-between px-6 md:px-10 lg:px-20',
+    'text-gray-50 backdrop-blur-md',
   )}
 >
   <img
     src="/assets/agenone-nav.png"
     alt="Agenone logo"
-    width="170px"
-    height="34px"
+    class="h-[26px] w-[133px] md:h-[34px] md:w-[170px]"
   />
 
-  <nav>
+  <nav class="hidden lg:block">
     <ul class="flex gap-10 text-lg font-medium">
       {
         navList.map(({ title, href }) => (
@@ -32,5 +32,15 @@ import { cn } from '~/lib/utils';
     </ul>
   </nav>
 
-  <Button title="Contact us">Contact Us</Button>
+  <Button title="Contact us" classList="hidden lg:block" isSmall>
+    Contact us
+  </Button>
+
+  <button
+    type="button"
+    aria-label="Menu"
+    class="rounded-lg border px-2 py-3 text-md lg:hidden"
+  >
+    <img src="/assets/icons/menu.svg" alt="Menu icon" width="16" height="7" />
+  </button>
 </header>
